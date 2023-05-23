@@ -1,74 +1,101 @@
 #include <iostream>
 using namespace std;
 
-int b = 0, l = 0, k = 8;
+int Ritmodecrecimiento = 0, valorextra1 = 0, valorextra2 = 9; // Definicion de variables globales
+
+// Ritmodecrecimiento es la cantidad de filas que se construyen
+// Valor extra 1 y 2 son los limites que el programa ira construyendo
+// Partedeenmedio son figuras que se generan para separar las dos grandes como a'a
 
 void Secuencia();
-void Secuencia2(int i);
+void Secuencia2(int sumari);
+void Secuencia3();
 
 int main()
 {
 
-    cout << endl;
+    cout << endl; // Salto inicial
 
     do
     {
-        int x = 0;
+        int Partedeenmedio = 0; // variables que afecten al main
 
-        if ((b == 2) || (b == 5) || (b == 8))
+        if ((Ritmodecrecimiento == 2) || (Ritmodecrecimiento == 5) || (Ritmodecrecimiento == 8)) // Decisiones
         {
-            Secuencia();
+            Secuencia(); // Evalunadp "secuencia"
+
             cout << endl;
         }
         else
         {
 
-            Secuencia();
+            Secuencia(); // Evalunado "secuencia"
 
-            while (x <= 1)
+            while (Partedeenmedio <= 1)
             {
                 cout << "||";
-                x += 1;
+
+                Partedeenmedio += 1;
             }
 
+            for (int g = 0; g <= 12; g++)
+            {
+                cout<<" ";
+            }
+        
+            for (int r = 0; r <= 4; r++)
+            {
+                cout<<"-";
+            }
+            
             cout << endl;
         }
 
-        b += 1;
+        Ritmodecrecimiento += 1;
 
-    } while (b <= 8);
+    } while (Ritmodecrecimiento <= 8);
 
     return 0;
 }
 
-void Secuencia()
+// Funciones del programa- ------------------------------ Funciones del programa
+
+void Secuencia() // Esta crea las figuras largas
 {
 
-    for (int i = 0; i <= 8; i++)
+    for (int sumari = 0; sumari <= 8; sumari++)
     {
         cout << "]";
-        Secuencia2(i);
+        Secuencia2(sumari);
     }
 
     cout << endl;
 }
 
-void Secuencia2(int i)
+void Secuencia2(int sumari) // Evalua cuando se creara las partes del triangulo
 {
 
-    if (i == 8)
+    if (sumari == 8)
     {
-        for (int h = 0; h <= k; h++)
-        {
-            cout << " ";
-        }
+        Secuencia3();
 
-        for (int c = 0; c <= l; c++)
+        for (int c = 0; c <= valorextra1; c++)
         {
             cout << "+ ";
         }
 
-        l += 1;
-        k -= 1;
+        Secuencia3();
+
+        valorextra1 += 1;
+        valorextra2 -= 1;
+    }
+}
+
+void Secuencia3() // Creara las separaciones entre las figuras de secuencia 1 y 2
+{
+
+    for (int h = 0; h <= valorextra2; h++)
+    {
+        cout << " ";
     }
 }
