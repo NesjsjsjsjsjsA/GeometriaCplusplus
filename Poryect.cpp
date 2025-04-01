@@ -22,7 +22,7 @@ int main()
 
         if ((Ritmodecrecimiento == 2) || (Ritmodecrecimiento == 5) || (Ritmodecrecimiento == 8)) // Decisiones
         {
-            Secuencia(); // Evalunadp "secuencia"
+            Secuencia(); // Evalunado "secuencia"
 
             cout << endl;
         }
